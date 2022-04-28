@@ -2,6 +2,7 @@ require('kk.settings')     -- point to the settings file in lua/kk
 require('kk.keymaps')      -- call keybindings
 require('kk.plugins')      -- packer pluginmanger config
 require('kk.nvim-tree')
+require("kk.telescope")
 -- vim.cmd('colorscheme tokyonight')
 require('kk.treesitter')
 require('kk.colortheme')  -- Colortheme

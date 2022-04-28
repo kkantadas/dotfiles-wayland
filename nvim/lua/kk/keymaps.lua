@@ -78,3 +78,9 @@ keymap("n", "<leader>c" , ":colorscheme tokyonight<cr>", opts)
 keymap("n", "<leader>t" , ":TransparentToggle<cr>", opts)
 
 
+-- teleskop
+keymap("n", "<leader>f" , ":Telescope find_files<cr>", opts)
+keymap("n", "<C-g>" , ":Telescope live_grep<cr>", opts)
+
+-- fuzzyfinder
+keymap("n", "<C-f>" , ":FZF<cr>", opts)

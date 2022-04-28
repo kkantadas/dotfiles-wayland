@@ -40,6 +40,7 @@ set.writebackup = false
 set.expandtab = true
 set.shiftwidth = 2
 set.tabstop = 2
+set.laststatus = 3
 -- set.guifont = "monospace:h17"
 
 vim.o.shortmess = vim.o.shortmess .. "c"

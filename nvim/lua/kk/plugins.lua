@@ -47,12 +47,16 @@ use 'EdenEast/nightfox.nvim'
 use "kyazdani42/nvim-web-devicons"
 use "kyazdani42/nvim-tree.lua"
 use "folke/tokyonight.nvim"  -- colortheme
-
+use {
+  'nvim-telescope/telescope.nvim',
+  requires = { {'nvim-lua/plenary.nvim'} }
+}
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   }
+  use "nvim-telescope/telescope-media-files.nvim"
 
  -- Automatically set up your configuration after cloning packer.nvim
  -- Put this at the end after all plugins
