@@ -2,7 +2,6 @@ HISTFILE=~/.zsh_histfile
 HISTSIZE=100000
 SAVEHIST=100000
 
-
 export HISTFILESIZE=1000000000
 export HISTSIZE=1000000000
 setopt INC_APPEND_HISTORY
@@ -40,6 +39,7 @@ prompt_themes+=( mytheme )
 prompt mytheme
 
 
+zstyle ':completion:*' rehash true
 
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/kanta/.zshrc'
@@ -53,7 +53,7 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 source ~/.zsh/fzf-zsh-plugin/fzf-zsh-plugin.plugin.zsh
-
+ZSH_AUTOSUGGEST_HISTORY_IGNORE=*
 #Keybinding
 bindkey \^u backward-kill-line
 bindkey '^[[A' history-substring-search-up
@@ -121,6 +121,10 @@ note () {
     fi
 }
 
+ # if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+ #   exec tmux
+ # fi
+ # 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPS="--extended"

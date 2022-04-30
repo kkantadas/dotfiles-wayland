@@ -22,7 +22,7 @@ set.cursorline = true
 
 set.hidden = true
 set.guicursor = 'a:hor20-Cursor'
-set.laststatus = 0 
+set.laststatus = 0 ruler
 
 set.linebreak = true
 set.number = true
@@ -40,7 +40,6 @@ set.writebackup = false
 set.expandtab = true
 set.shiftwidth = 2
 set.tabstop = 2
-set.laststatus = 3
 -- set.guifont = "monospace:h17"
 
 vim.o.shortmess = vim.o.shortmess .. "c"
