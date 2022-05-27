@@ -15,14 +15,14 @@ set.splitright = true
 set.wrap = true
 set.scrolloff = 5
 set.fileencoding = 'utf-8'
-set.termguicolors = true
+--set.termguicolors = true
 
 set.relativenumber = true
 set.cursorline = true
 
 set.hidden = true
 set.guicursor = 'a:hor20-Cursor'
-set.laststatus = 0 
+set.laststatus = 0  
 
 set.linebreak = true
 set.number = true
@@ -40,7 +40,6 @@ set.writebackup = false
 set.expandtab = true
 set.shiftwidth = 2
 set.tabstop = 2
-set.laststatus = 3
 -- set.guifont = "monospace:h17"
 
 vim.o.shortmess = vim.o.shortmess .. "c"

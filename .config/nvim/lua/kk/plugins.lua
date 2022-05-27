@@ -47,6 +47,7 @@ use 'EdenEast/nightfox.nvim'
 use "kyazdani42/nvim-web-devicons"
 use "kyazdani42/nvim-tree.lua"
 use "folke/tokyonight.nvim"  -- colortheme
+use "folke/zen-mode.nvim"
 use {
   'nvim-telescope/telescope.nvim',
   requires = { {'nvim-lua/plenary.nvim'} }
@@ -65,4 +66,4 @@ use {
   end
 end)
 
-
+-- Lua

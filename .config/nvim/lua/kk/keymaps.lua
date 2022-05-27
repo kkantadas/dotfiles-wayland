@@ -71,16 +71,19 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 --NvimTree Filemanager`
 keymap("n", "<leader>e" , ":NvimTreeToggle<cr>", opts)
 
+-- Reader Mode 
+keymap("n", "<leader>s" , ":ZenMode<cr>", opts)
+
 --Source init.lua without exiting neovimo
 --vnnoremap <leader>sv :source $MYVIMRC<CR>
-keymap("n", "<leader>s" , ":loadfile $MYVIMRC<cr>", opts)
+keymap("n", "<leader>r" , ":source %<cr>", opts)
 keymap("n", "<leader>c" , ":colorscheme tokyonight<cr>", opts)
 keymap("n", "<leader>t" , ":TransparentToggle<cr>", opts)
 
 
 -- teleskop
 keymap("n", "<leader>f" , ":Telescope find_files<cr>", opts)
-keymap("n", "<C-g>" , ":Telescope live_grep<cr>", opts)
+keymap("n", "<leader>g" , ":Telescope live_grep<cr>", opts)
 
 -- fuzzyfinder
 keymap("n", "<C-f>" , ":FZF<cr>", opts)

@@ -8,7 +8,9 @@ set $up k
 set $right l
 # terminal emulator
 set $term foot
-
+workspace 1
+#default_orientation vertical
+#exec_always autotiling
 # application launcher
 set $menu bemenu-run --nb "000000" --nf "#dcdccc"  --fn terminus:18 -b -M 10 -p @
 ### Output configuration
@@ -16,7 +18,7 @@ set $menu bemenu-run --nb "000000" --nf "#dcdccc"  --fn terminus:18 -b -M 10 -p 
 # wallparer setting
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 exec "cd ~/bin && ./bgchanger.sh"
-#
+exec swaync
 ### Input configuration
 
 input type:touchpad {
@@ -26,11 +28,14 @@ input type:touchpad {
 
 ### Key bindings
 #
-    bindsym $mod+u exec firefox
+    bindsym $mod+u workspace 2; exec run-or-rase-sway.sh firefox
     bindsym $mod+c exec HeadphoneBlue.sh
     bindsym $mod+m exec grim "$HOME/.screenshots/$(date).png" 
-    bindsym $mod+x exec foot -e ranger
-    bindsym $mod+Shift+z exec systemctl hybrid-sleep
+    bindsym $mod+x workspace 3; exec foot -e ranger
+    bindsym $mod+t workspace 6; exec ~/bin/mtv.sh
+    bindsym $mod+Shift+z workspace 9; exec ~/bin/sway-suspend.sh
+    bindsym $mod+Shift+b workspace 9; exec sudo systemctl suspend, mode "default" 
+
 
     # Start a terminal
     bindsym $mod+Return exec $term
@@ -154,6 +159,7 @@ mode "resize" {
 }
     bindsym $mod+r mode "resize"
     bindsym $mod+n mode "  mode hide"
+
 
 #
 # Status Bar:
