@@ -180,7 +180,9 @@ font pango:jetbrains mono 11.0
         inactive_workspace #323232 #323232 #5c5c5c
     }
 }
+   hide_edge_borders smart
    gaps inner 5
+   smart_gaps on
    for_window [title="^.*"] title_format " "
    default_border pixel 1
    for_window [class=".*"] border pixel 0
