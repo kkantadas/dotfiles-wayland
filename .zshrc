@@ -16,7 +16,7 @@ export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
 unsetopt beep
-
+unsetopt nomatch
 path+=('~/bin')
 export PATH
 #export Environment=XDG_SESSION_TYPE=wayland
@@ -90,6 +90,7 @@ bindkey -e
     alias PacRemove="sudo pacman -Sc"
     alias fbreader="FBReader"
     alias v="nvim"
+    alias vi="nvim"
     alias l='exa -G --no-icons  --group-directories-first'
     alias la='exa -G -a --icons --group-directories-first'
     alias ls='exa -G --icons --group-directories-first'

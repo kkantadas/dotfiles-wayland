@@ -1,4 +1,4 @@
-# Autostart Xserver session xinit
+# Autostart 
 
 if [ "$(tty)" = "/dev/tty1" ] ; then
     # Your environment variables
@@ -7,6 +7,7 @@ if [ "$(tty)" = "/dev/tty1" ] ; then
     export MOZ_WEBRENDER=1
     LIBSEAT_BACKEND=logind
     export XKB_DEFAULT_OPTIONS=caps:escape
+    export EDITOR=nvim
     exec sway
 
 fi
