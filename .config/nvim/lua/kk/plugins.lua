@@ -48,6 +48,7 @@ use "kyazdani42/nvim-web-devicons"
 use "kyazdani42/nvim-tree.lua"
 use "folke/tokyonight.nvim"  -- colortheme
 use "folke/zen-mode.nvim"
+use "vimwiki/vimwiki" 
 use {
   'nvim-telescope/telescope.nvim',
   requires = { {'nvim-lua/plenary.nvim'} }

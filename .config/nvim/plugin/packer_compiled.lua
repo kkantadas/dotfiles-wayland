@@ -113,6 +113,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kanta/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
+  },
+  vimwiki = {
+    loaded = true,
+    path = "/home/kanta/.local/share/nvim/site/pack/packer/start/vimwiki",
+    url = "https://github.com/vimwiki/vimwiki"
+  },
+  ["zen-mode.nvim"] = {
+    loaded = true,
+    path = "/home/kanta/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
+    url = "https://github.com/folke/zen-mode.nvim"
   }
 }
 
