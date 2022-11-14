@@ -14,6 +14,7 @@ else
 fi
 export PS2="> "
 
+source /usr/share/fzf/completion.bash && source /usr/share/fzf/key-bindings.bash
 #PS1=' [\u@\h \W]\$ '
 #PS1='(Goura \W)\$ '
 #PS1='(\W)\$ '
@@ -29,8 +30,8 @@ export PS2="> "
 #
 export PS2="> "
 
+
 export PATH=~/bin:$PATH
-export Environment=XDG_SESSION_TYPE=wayland
 
 #:~/binbin_bspwm/:$HOME/.config/bspwm:$PATH
 
@@ -111,7 +112,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias poweroff='sudo poweroff'
     alias du-fs='du -h --max-depth=0 $1' #fs=foldersize -requires ONE input
     alias mp='mplayer -vf crop=1010:99'
-    alias CachRem='rm -rfv ~/{.cache/{/chromium/Default/,common-lisp/,gstreamer-1.0/,vimb/WebKitCache},.cache/yay/,.local/share/webkitgtk,.pki/,.local/share/nvim/swap/}'
+    alias CachRem='rm -rfv ~/{.cache/{/chromium/Default/,common-lisp/,gstreamer-1.0/,vimb/WebKitCache},.cache/yay/,.local/share/webkitgtk,.pki/}'
     alias shred='shred -fuv'
     alias chroma='chromium'
     alias mplayer='mplayer -fs'
@@ -124,19 +125,23 @@ if [ -x /usr/bin/dircolors ]; then
     #alias feh='feh --image-bg black --keep-zoom-vp --scale-down --menu-bg /usr/share/feh/images/menubg_brushed.png'
     #alias feh='feh -F'
     alias fe='feh --bg-scale'
-    alias pi='ping google.com'
     alias dh='df -h'
     alias pt='pstree -p'
     alias du-ds='du -sh */'
     alias tmux-attach="tmux attach"
     alias phone="jmtpfs --help ; echo '.....jmtpfs ~/Folder....'"
+    alias vi="nvim"
     alias Emacs="emacsclient -cn -a="" $*"
+    alias weather="curl wttr.in"
+    alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
     #alias Arch-home="sudo cp $HOME/bin/arch.conf /boot/loader/entries/arch.conf && cp $HOME/bin/arch-xinit-homerc $HOME/.xinitrc && cp $HOME/bin/arch-Xresources $HOME/.Xresources "
 
     alias Arch-MA="sudo cp $HOME/bin/arch-MA.conf /boot/loader/entries/arch.conf && cp $HOME/bin/arch-xinit-MArc  $HOME/.xinitrc && cp $HOME/bin/arch-MA-Xresources $HOME/.Xresources " 
     alias PacRemove="sudo pacman -Sc"
     alias fbreader="FBReader"
-    alias v="nvim"
+    alias Snap-make="snapper -c root create -c timeline --description "
+    alias Snap-list="snapper -c root list"
+    alias Snap-remove="snapper remove"
     #remove all other packages from cache
 fi
 
@@ -145,7 +150,14 @@ fi
     alias lla='ls -lah'
     alias la='ls -A'
     alias l='ls -CF'
-    alias jo='jobs'
+# some more ls aliases
+    #alias l='exa -G --no-icons  --group-directories-first'
+    #alias la='exa -G -a --icons --group-directories-first'
+    #alias ls='exa --icons --group-directories-first'
+    #alias ll='exa -l -g --icons --group-directories-first'
+    #alias lla='exa -l -a -g --icons --group-directories-first'
+    #alias tree='exa --tree --icons'  
+    #alias snapgui='snapper-gui'
 
 # Alias definitions.
 
@@ -244,13 +256,6 @@ wda () {
 
 }
 
-cd() {
-        if [ -n "$1" ]; then
-                builtin cd "$@" && ls -pvA --color=auto --group-directories-first
-        else
-                builtin cd ~ && ls -pvA --color=auto --group-directories-first
-        fi
-}
 
 # Back up a file. Usage "backupthis <filename>"
 backupthis() {
@@ -262,10 +267,8 @@ export LESSOPEN='|/usr/bin/lesspipe.sh %s'
 export LESS='-R'
 
 export EDITOR=vim
-#export EDITOR=emacs 
 
 
-# Pretty-print man(1) pages.
 man() {
     env LESS_TERMCAP_mb=$'\E[01;31m' \
     LESS_TERMCAP_md=$'\E[01;38;5;74m' \
@@ -289,4 +292,6 @@ supertouch() {
     done
 }
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+
+

@@ -7,18 +7,32 @@ set $down j
 set $up k
 set $right l
 # terminal emulator
-set $term foot
+#set $term alacritty
+set $term footclient
+
 workspace 1
 #default_orientation vertical
 #exec_always autotiling
 # application launcher
-set $menu bemenu-run --nb "000000" --nf "#dcdccc"  --fn terminus:18 -b -M 10 -p @
+#set $menu bemenu-run --nb "000000" --nf "#dcdccc"  --fn terminus:18 -b -M 10 -p @
+set $menu tofi-drun
 ### Output configuration
 
 # wallparer setting
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 exec "cd ~/bin && ./bgchanger.sh"
-exec swaync
+exec_always --no-startup-id flashfocus
+exec "gammastep -l 32.4067:88.3686"
+exec foot --server --config "$HOME/.config/foot/foot.ini" 
+#exec "bluetoothctl -- power off && bluetoothctl -- power on" 
+exec mako 
+#need libnotify
+
+#exec swaync
+#for_window [app_id="foot"] floating enable
+for_window [app_id="imv"] floating enable
+for_window [app_id="pavucontrol"] floating enable
+
 ### Input configuration
 
 input type:touchpad {
@@ -29,19 +43,21 @@ input type:touchpad {
 ### Key bindings
 #
     bindsym $mod+u workspace 2; exec run-or-rase-sway.sh firefox
-    bindsym $mod+c exec HeadphoneBlue.sh
+    bindsym $mod+c exec headphoneBlue.sh
     bindsym $mod+m exec grim "$HOME/.screenshots/$(date).png" 
-    bindsym $mod+x workspace 3; exec foot -e ranger
-    bindsym $mod+t workspace 6; exec ~/bin/mtv.sh
-    bindsym $mod+Shift+z workspace 9; exec ~/bin/sway-suspend.sh
-    bindsym $mod+Shift+b workspace 9; exec sudo systemctl suspend, mode "default" 
+    bindsym $mod+x workspace 4; exec foot -e ranger
+    bindsym $mod+shift+t workspace 6; exec ~/bin/mtv.sh
+    bindsym $mod+Shift+b workspace 9; exec ~/bin/sway-suspend.sh
+    bindsym $mod+Shift+z workspace 9; exec systemctl suspend, mode "default" 
+    ##bindsym $mod+Shift+z workspace 9; exec systemctl hibernate, mode "default" 
 
 
     # Start a terminal
     bindsym $mod+Return exec $term
 
-    # Kill focused window
-    bindsym $mod+q kill
+    # kill focused window
+    bindsym $mod+Shift+q kill
+
 
     # Start your launcher
     bindsym $mod+d exec $menu
@@ -158,7 +174,7 @@ mode "resize" {
     bindsym Escape mode "default"
 }
     bindsym $mod+r mode "resize"
-    bindsym $mod+n mode "  mode hide"
+    bindsym $mod+n mode "mode hide"
 
 
 #
@@ -167,7 +183,7 @@ mode "resize" {
 # Read `man 5 sway-bar` for more information
 bar {
     position bottom
-    status_command /usr/bin/i3status-rs /home/kanta/.config/i3status-rust/config.toml
+    status_command /usr/bin/i3status-rs $HOME/.config/i3status-rust/config.toml
     mode hide
     modifier mod1
     height 23  
@@ -180,8 +196,8 @@ font pango:jetbrains mono 11.0
         inactive_workspace #323232 #323232 #5c5c5c
     }
 }
-   hide_edge_borders smart
-   gaps inner 5
+   #hide_edge_borders smart
+   gaps inner 4
    smart_gaps on
    for_window [title="^.*"] title_format " "
    default_border pixel 1
@@ -192,3 +208,5 @@ font pango:jetbrains mono 11.0
    font pango:jetbrains mono 2
 
 include /etc/sway/config.d/*
+include ~/.config/sway/config.d/*
+

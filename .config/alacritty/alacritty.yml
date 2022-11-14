@@ -5,7 +5,7 @@ window:
     lines: 2
 
   # Background opacity
-  opacity: 0.8 
+  opacity: 0.95 
 
   # Window title
   title: Terminal
@@ -40,7 +40,7 @@ font:
     family: SauceCodePro Nerd Font
     style: Bold Italic
 
-  size: 12.5
+  size: 13
 
 
   # Glyph offset determines the locations of the glyphs within their cells with

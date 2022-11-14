@@ -87,3 +87,6 @@ keymap("n", "<leader>g" , ":Telescope live_grep<cr>", opts)
 
 -- fuzzyfinder
 keymap("n", "<C-f>" , ":FZF<cr>", opts)
+
+-- change background color for text files
+keymap("n", "<leader>p" , ":highlight Normal guibg=#F8C888 guifg=#392613<cr>", opts)

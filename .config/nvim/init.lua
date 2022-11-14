@@ -4,9 +4,9 @@ require('kk.plugins')      -- packer pluginmanger config
 require('kk.nvim-tree')
 require("kk.telescope")
 -- vim.cmd('colorscheme tokyonight')
-require('kk.treesitter')
 require('kk.colortheme')  -- Colortheme
 -- vim.cmd('colorscheme duskfox') ---""---
+require('kk.treesitter')
 
    -- add transparent background 
      require("transparent").setup({
@@ -29,3 +29,12 @@ require('kk.colortheme')  -- Colortheme
 vim.cmd("source ~/.config/nvim/lua/kk/lastposition.vim")
 vim.cmd("command! ClearReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor")
 vim.cmd("set spelllang=en,cjk")
+
+-- cursor line by line
+vim.cmd("nmap <silent> <Down> gj")
+vim.cmd("nmap <silent> <Up> gk")
+
+-- side border
+vim.cmd("set foldcolumn=1")
+vim.cmd(" hi FoldColumn ctermbg=none guibg=none ")
+vim.cmd(" hi Folded ctermbg=none guibg=none ")

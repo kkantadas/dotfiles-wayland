@@ -17,7 +17,7 @@ set.scrolloff = 5
 set.fileencoding = 'utf-8'
 --set.termguicolors = true
 
-set.relativenumber = true
+--set.relativenumber = true
 set.cursorline = true
 
 set.hidden = true
@@ -25,7 +25,7 @@ set.guicursor = 'a:hor20-Cursor'
 set.laststatus = 0  
 
 set.linebreak = true
-set.number = true
+--set.number = true
 
 set.backup = false
 set.clipboard = "unnamedplus"
@@ -48,3 +48,4 @@ vim.o.shm = vim.o.shm .. "I"
 -- vim.cmd "set syntax=on"
 vim.cmd "set whichwrap+=<,>,[,],h,l" -- vim.cmd - old vim way
 vim.cmd [[set iskeyword+=-]]
+--vim.api.nvim_set_option("clipboard","unnamed")
