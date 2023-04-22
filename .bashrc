@@ -1,3 +1,12 @@
+# .bashrc
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+PS1='[\u@\h \W]\$ '
+
+export XDG_RUNTIME_DIR=/run/user/$UID
 ## bashrc
 
 case $- in
@@ -131,6 +140,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias tmux-attach="tmux attach"
     alias phone="jmtpfs --help ; echo '.....jmtpfs ~/Folder....'"
     alias vi="nvim"
+    alias vim="nvim"
     alias Emacs="emacsclient -cn -a="" $*"
     alias weather="curl wttr.in"
     alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"

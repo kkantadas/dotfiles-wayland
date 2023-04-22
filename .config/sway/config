@@ -14,16 +14,16 @@ workspace 1
 #default_orientation vertical
 #exec_always autotiling
 # application launcher
-#set $menu bemenu-run --nb "000000" --nf "#dcdccc"  --fn terminus:18 -b -M 10 -p @
-set $menu tofi-drun
+set $menu bemenu-run --nb "000000" --nf "#dcdccc"  --fn terminus:18 -b -M 10 -p @
+#set $menu tofi-drun
 ### Output configuration
 
 # wallparer setting
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 exec "cd ~/bin && ./bgchanger.sh"
 exec_always --no-startup-id flashfocus
-exec "gammastep -l 32.4067:88.3686"
 exec foot --server --config "$HOME/.config/foot/foot.ini" 
+exec gammastep -l 32.4067:88.3686 -t 5700:3900
 #exec "bluetoothctl -- power off && bluetoothctl -- power on" 
 exec mako 
 #need libnotify
@@ -42,13 +42,15 @@ input type:touchpad {
 
 ### Key bindings
 #
-    bindsym $mod+u workspace 2; exec run-or-rase-sway.sh firefox
+    bindsym $mod+u workspace 2; exec GDK_BACKEND="wayland" firefox
     bindsym $mod+c exec headphoneBlue.sh
-    bindsym $mod+m exec grim "$HOME/.screenshots/$(date).png" 
+    bindsym $mod+m exec grim -t jpeg $HOME/.screenshots/$(date +%Y-%m-%d_%H-%m-%s).jpg
+    bindsym $mod+Shift+M exec grim -t jpeg -g "$(slurp)" ~/.screenshots/$(date +%Y-%m-%d_%H-%m-%s).jpg
     bindsym $mod+x workspace 4; exec foot -e ranger
-    bindsym $mod+shift+t workspace 6; exec ~/bin/mtv.sh
-    bindsym $mod+Shift+b workspace 9; exec ~/bin/sway-suspend.sh
-    bindsym $mod+Shift+z workspace 9; exec systemctl suspend, mode "default" 
+    bindsym $mod+t workspace 5; exec foot -e vim diary.txt
+    bindsym $mod+Shift+t workspace 6; exec ~/bin/mtv.sh
+    bindsym $mod+Shift+b workspace 9; exec loginctl suspend 
+    bindsym $mod+Shift+z workspace 9; exec loginctl suspend , mode "default" 
     ##bindsym $mod+Shift+z workspace 9; exec systemctl hibernate, mode "default" 
 
 
