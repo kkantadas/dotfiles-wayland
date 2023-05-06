@@ -43,7 +43,7 @@ input type:touchpad {
 ### Key bindings
 #
     bindsym $mod+u workspace 2; exec GDK_BACKEND="wayland" firefox
-    bindsym $mod+z exec killall -SIGUSR1 waybar
+    bindsym $mod+c exec headphoneBlue.sh
     bindsym $mod+m exec grim -t jpeg $HOME/.screenshots/$(date +%Y-%m-%d_%H-%m-%s).jpg
     bindsym $mod+Shift+M exec grim -t jpeg -g "$(slurp)" ~/.screenshots/$(date +%Y-%m-%d_%H-%m-%s).jpg
     bindsym $mod+x workspace 4; exec foot -e ranger
@@ -185,7 +185,18 @@ mode "resize" {
 # Read `man 5 sway-bar` for more information
 bar {
     position bottom
-    swaybar_command waybar
+    status_command /usr/bin/i3status-rs $HOME/.config/i3status-rust/config.toml
+    mode hide
+    modifier mod1
+    height 23  
+    pango_markup enabled
+font pango:jetbrains mono 11.0
+
+    colors {
+        statusline #ffffff
+        background #323232
+        inactive_workspace #323232 #323232 #5c5c5c
+    }
 }
    #hide_edge_borders smart
    gaps inner 4
