@@ -276,7 +276,7 @@ backupthis() {
 export LESSOPEN='|/usr/bin/lesspipe.sh %s'
 export LESS='-R'
 
-export EDITOR=vim
+export EDITOR=nvim
 
 
 man() {

@@ -2,8 +2,8 @@
 swaybg -i $(find ~/bin/wallpapers/. -type f | shuf -n1) -m fill &
 OLD_PID=$!
 while true; do
-    sleep 600
-    swaybg -i $(find wallpapers/. -type f | shuf -n1) -m fill &
+    sleep 6
+    swaybg -i $(find ~/bin/wallpapers/. -type f | shuf -n1) -m fill &
     NEXT_PID=$!
     sleep 5
     kill $OLD_PID
