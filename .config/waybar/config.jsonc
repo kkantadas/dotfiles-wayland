@@ -12,6 +12,7 @@
     "custom/media"],
     "modules-center": ["sway/window"],
     "modules-right": [
+    "custom/weather", 
     "pulseaudio", 
     "bluetooth",
     "network", 
@@ -25,6 +26,31 @@
     "battery#bat2", 
     "clock", 
     "tray"],
+
+
+ "wlr/workspaces": {
+     "format": "{name}",
+     //"format": "{name}: {icon}",
+     "on-click": "activate",
+     "all-outputs": true,
+     "sort-by-number": true,
+     "format-icons": {
+     "1": "1  ",
+     "2": "2  ",
+     "3": "3  ",
+     "4": "4  ",
+     "5": "5  ",
+     "6": "6  ",
+     "7": "7  ",
+     "8": "8  ",
+     "9": "9  ",
+     "10": " 10 "
+   }, 
+     "on-scroll-up": "hyprctl dispatch workspace e+1",
+     "on-scroll-down": "hyprctl dispatch workspace e-1",
+   },
+
+
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,
@@ -50,8 +76,9 @@
     "custom/weather" : {
         "tooltip" : true,
         "format" : "{}",
-        "restart-interval" : 300,
+  //      "restart-interval" : 300,
         "exec" : "~/.config/waybar/scripts/waybar-wttr.py",
+        "on-click" : "~/.config/waybar/scripts/waybar-wttr.py",
         "return-type" : "json"
     },
     "keyboard-state": {
@@ -107,10 +134,11 @@
         }
     },
     "tray": {
-        // "icon-size": 21,
+         "icon-size": 21,
         "tooltip": false,
         "spacing": 10
     },
+
   //  "clock": {
   //      // "timezone": "America/New_York",
   //      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
@@ -206,14 +234,14 @@
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
-        // "on-click": "foot -e nmtui"
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+         "on-click": "alacritty --class floating -e nmtui"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon} ",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
+        //"format-bluetooth": "{volume}% {icon} {format_source}",
+        //"format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
