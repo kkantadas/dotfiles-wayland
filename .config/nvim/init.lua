@@ -9,22 +9,22 @@ require('kk.colortheme')  -- Colortheme
 require('kk.treesitter')
 
    -- add transparent background 
-     require("transparent").setup({
-      enable = true, -- boolean: enable transparent
-      extra_groups = { -- table/string: additional groups that should be clear
-        -- In particular, when you set it to 'all', that means all avaliable groups
-        -- example of akinsho/nvim-bufferline.lua
-        "BufferLineTabClose",
-        "BufferlineBufferSelected",
-        "BufferLineFill",
-        "BufferLineBackground",
-        "BufferLineSeparator",
-        "BufferLineIndicatorSelected",
-      },
-    
-    -- vim.cmd -- execute *.vim skript
-      exclude = {}, -- table: groups you don't want to clear
-    })
+  --   require("transparent").setup({
+  --    enable = true, -- boolean: enable transparent
+  --    extra_groups = { -- table/string: additional groups that should be clear
+  --      -- In particular, when you set it to 'all', that means all avaliable groups
+  --      -- example of akinsho/nvim-bufferline.lua
+  --      "BufferLineTabClose",
+  --      "BufferlineBufferSelected",
+  --      "BufferLineFill",
+  --      "BufferLineBackground",
+  --      "BufferLineSeparator",
+  --      "BufferLineIndicatorSelected",
+  --    },
+  --  
+  --  -- vim.cmd -- execute *.vim skript
+  --    exclude = {}, -- table: groups you don't want to clear
+  --  })
 
 vim.cmd("source ~/.config/nvim/lua/kk/lastposition.vim")
 vim.cmd("command! ClearReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor")

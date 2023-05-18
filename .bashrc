@@ -1,13 +1,11 @@
 # .bashrc
 
-# If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
 export XDG_RUNTIME_DIR=/run/user/$UID
-## bashrc
 
 case $- in
     *i*) ;;
@@ -21,7 +19,6 @@ if [ -n "$SSH_CONNECTION" ]; then
 else
     export PS1="\w \$ "
 fi
-export PS2="> "
 
 source /usr/share/fzf/completion.bash && source /usr/share/fzf/key-bindings.bash
 #PS1=' [\u@\h \W]\$ '
@@ -38,15 +35,12 @@ source /usr/share/fzf/completion.bash && source /usr/share/fzf/key-bindings.bash
 #fi
 #
 export PS2="> "
-
-
 export PATH=~/bin:$PATH
-
-#:~/binbin_bspwm/:$HOME/.config/bspwm:$PATH
-
-#PATH=$PATH$( find $HOME/bin/bin_bspwm/ -type d -printf ":%p" )
-#export TERM=xterm
 export TERM=xterm-256color
+export LESSOPEN='|/usr/bin/lesspipe.sh %s'
+export LESS='-R'
+export EDITOR=nvim
+
 
 #export PAGER=/usr/bin/vimpager
 #alias less=$PAGER
@@ -102,8 +96,12 @@ fi
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias dmenu='dmenu_run -fn monospace-7-'
+fi
 
+    #https://github.com/garabik/grc
+    #Color in the terminal -- cp -r  /etc/profile.d/grc.sh /etc/ 
+#    GRC_ALIASES=true
+#    [[ -s "/etc/profile.d/grc.sh" ]] && source /etc/grc.sh
     alias dir='dir --color=auto'
     alias feh='feh --image-bg black --scale-down'
     alias urxvt2='urxvt & sleep .3s && transset-df -a 0.93'
@@ -123,17 +121,8 @@ if [ -x /usr/bin/dircolors ]; then
     alias mp='mplayer -vf crop=1010:99'
     alias CachRem='rm -rfv ~/{.cache/{/chromium/Default/,common-lisp/,gstreamer-1.0/,vimb/WebKitCache},.cache/yay/,.local/share/webkitgtk,.pki/}'
     alias shred='shred -fuv'
-    alias chroma='chromium'
-    alias mplayer='mplayer -fs'
-    alias Rxvt='urxvt -e bash -c "screenfetch -n && bash"'
-    alias nm-connection-editor='ratpoison -c "frestore `tail -n 1 .config/ratframe/ratframe2`" ; exec nm-connection-editor'
-    alias weather='curl wttr.in/Kolkata'
-    alias urxvt-white='urxvt -bg grey90 -fg grey25 -fn "xft:monofur:bold:italic:pixelsize=16"  & sleep 0.3 && transset-df -a 0.9'
+    alias weather='curl wttr.in/Krishnanagar'
     alias ..git='/usr/bin/git --git-dir=$HOME/.gitBareDot/ --work-tree=$HOME' 
-    #alias feh="feh --action1 \;\"image-metadata.sh edit-comment %f\" --action2 \;\"image-metadata.sh edit-tags %f\" --info \"image-metadata.sh show %f\" "
-    #alias feh='feh --image-bg black --keep-zoom-vp --scale-down --menu-bg /usr/share/feh/images/menubg_brushed.png'
-    #alias feh='feh -F'
-    alias fe='feh --bg-scale'
     alias dh='df -h'
     alias pt='pstree -p'
     alias du-ds='du -sh */'
@@ -142,18 +131,14 @@ if [ -x /usr/bin/dircolors ]; then
     alias vi="nvim"
     alias vim="nvim"
     alias Emacs="emacsclient -cn -a="" $*"
-    alias weather="curl wttr.in"
     alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
-    #alias Arch-home="sudo cp $HOME/bin/arch.conf /boot/loader/entries/arch.conf && cp $HOME/bin/arch-xinit-homerc $HOME/.xinitrc && cp $HOME/bin/arch-Xresources $HOME/.Xresources "
-
-    alias Arch-MA="sudo cp $HOME/bin/arch-MA.conf /boot/loader/entries/arch.conf && cp $HOME/bin/arch-xinit-MArc  $HOME/.xinitrc && cp $HOME/bin/arch-MA-Xresources $HOME/.Xresources " 
     alias PacRemove="sudo pacman -Sc"
     alias fbreader="FBReader"
     alias Snap-make="snapper -c root create -c timeline --description "
     alias Snap-list="snapper -c root list"
     alias Snap-remove="snapper remove"
+    alias cp="cp -r"
     #remove all other packages from cache
-fi
 
 # some more ls aliases
     alias ll='ls -lh'
@@ -272,11 +257,6 @@ backupthis() {
         cp -riv $1 ${1}-$(date +%Y%m%d%H%M).backup;
 }
 
-
-export LESSOPEN='|/usr/bin/lesspipe.sh %s'
-export LESS='-R'
-
-export EDITOR=nvim
 
 
 man() {

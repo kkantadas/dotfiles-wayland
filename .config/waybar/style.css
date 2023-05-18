@@ -6,7 +6,7 @@
     border-radius: 4px;
 }
 
-window#waybar {
+ window#waybar {
     background-color: rgba(43, 48, 59, 0.9);
     border-bottom: 3px solid rgba(100, 114, 125, 0.5);
     color: #ffffff;
@@ -96,6 +96,7 @@ button:hover {
 #wireplumber,
 #custom-updates,
 #custom-weather, 
+#custom-colorpicker, 
 #custom-media,
 #tray,
 #mode,
@@ -168,6 +169,10 @@ label:focus {
     color: #333333;
 }
 
+#custom-colorpicker {
+    background-color: #bbccdd;
+    color: #333333;
+}
 
 #cpu {
     background-color: #bbccdd;

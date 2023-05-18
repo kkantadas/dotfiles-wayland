@@ -11,7 +11,8 @@ if [ "$(tty)" = "/dev/tty1" ] ; then
     export IBSEAT_BACKEND=logind
     export XKB_DEFAULT_OPTIONS=caps:escape
     export EDITOR=nvim
-    exec dbus-run-session sway
+    exec Hyprland
+    #exec dbus-run-session sway
 
 
 else

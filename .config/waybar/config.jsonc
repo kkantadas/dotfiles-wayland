@@ -6,13 +6,16 @@
      "passtrough": false,
      "gtk-layer-shell": true,
      "height": 0,
-    "modules-left": ["wlr/workspaces",
+    "modules-left": [
+    "wlr/workspaces",
+    "river/workspaces",
     "sway/workspaces", 
     "sway/mode", 
     "custom/media"],
-    "modules-center": ["sway/window"],
+    "modules-center": [
+    "clock",
+    "sway/window"],
     "modules-right": [
-    "custom/weather", 
     "pulseaudio", 
     "bluetooth",
     "network", 
@@ -24,7 +27,7 @@
     "sway/language", 
     "battery", 
     "battery#bat2", 
-    "clock", 
+   // "custom/weather",
     "tray"],
 
 
@@ -50,6 +53,11 @@
      "on-scroll-down": "hyprctl dispatch workspace e-1",
    },
 
+"hyprland/window": {
+    "format": "{}",
+    "max-length": 360,
+    "separate-outputs": true,
+  },
 
     // Modules configuration
     // "sway/workspaces": {
@@ -67,7 +75,7 @@
     //         "default": ""
     //     }
     // },
- "custom/updates": {
+    "custom/updates": {
         "exec": "(paru -Qua) | wc -l",
         "interval": 7200,
         "format": "  {}"
@@ -75,12 +83,20 @@
     },
     "custom/weather" : {
         "tooltip" : true,
-        "format" : "{}",
-  //      "restart-interval" : 300,
+        "format" : "🌧{}",
+        "restart-interval" : 3000,
         "exec" : "~/.config/waybar/scripts/waybar-wttr.py",
-        "on-click" : "~/.config/waybar/scripts/waybar-wttr.py",
-        "return-type" : "json"
+       //"on-click" : "~/.config/waybar/scripts/waybar-wttr.py",
+        //"on-click" : "~/.config/waybar/scripts/wttr.sh"
+       "return-type" : "json"
+
     },
+     "custom/colorpicker" : {
+        "tooltip" : true,
+        "format" : " {}",
+        "on-click" : "~/.config/waybar/scripts/colorpicker.sh"
+    },
+
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -146,8 +162,8 @@
   //  },
 
    "clock": {
-     "format": " {:%H:%M}",
-     "format-alt": " {:%H:%M   %Y, %d %B, %A}",
+     "format": " {:%H:%M   %Y, %d %B, %A}",
+     "format-alt": " {:%H:%M}",
      "tooltip-format": "<tt><small>{calendar}</small></tt>",
      "calendar": {
        "mode"          : "year",
@@ -221,7 +237,8 @@
      "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections}
  connected\n\n{device_enumerate}",
      "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+         "on-click": "foot --title float -e bluetoothctl"
    },
 
 
@@ -235,7 +252,7 @@
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
-         "on-click": "alacritty --class floating -e nmtui"
+         "on-click": "foot --title float -e nmtui"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
