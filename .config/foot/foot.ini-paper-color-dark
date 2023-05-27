@@ -58,31 +58,44 @@ bold-text-in-bright=yes
  hide-when-typing=yes
  alternate-scroll-mode=yes
 [colors]
-foreground=dcdccc
-background=24283B
-#background=1E1F20
-# foreground=dcdccc
-# background=10232e
  alpha=0.9
-## Normal/regular colors (color palette 0-7)
- regular0=222222  # black
- regular1=cc0000  # red
- regular2=4e9a06  # green
- regular3=c4a000  # yellow
- regular4=729fcf  # blue
- regular5=75507b  # magenta
- regular6=93e0e3  # cyan
- regular7=dcdccc  # white
-# Bright colors (color palette 8-15)
- bright0=666666   # bright black
- bright1=ef2929   # bright red
- bright2=8ae234   # bright green
- bright3=fce94f  # bright yellow
- bright4=32afff  # bright blue
- bright5=ad7fa8  # bright magenta
- bright6=34e2e2   # bright cyan
- bright7=ffffff   # bright white
-## dimmed colors (see foot.ini(5) man page)
+# -*- conf -*-
+# PaperColorDark
+# Palette based on https://github.com/NLKNguyen/papercolor-theme
+
+[cursor]
+color=1c1c1c eeeeee
+
+[colors]
+background=1c1c1c
+foreground=eeeeee
+regular0=1c1c1c  # black
+regular1=af005f  # red
+regular2=5faf00  # green
+regular3=d7af5f  # yellow
+regular4=5fafd7  # blue
+regular5=808080  # magenta
+regular6=d7875f  # cyan
+regular7=d0d0d0  # white
+bright0=bcbcbc   # bright black
+bright1=5faf5f   # bright red
+bright2=afd700   # bright green
+bright3=af87d7   # bright yellow
+bright4=ffaf00   # bright blue
+bright5=ff5faf   # bright magenta
+bright6=00afaf   # bright cyan
+bright7=5f8787   # bright white
+# selection-foreground=1c1c1c
+# selection-background=af87d7
+# -*- conf -*-
+# Gruvbox - Light
+
+# -*- conf -*-
+# Catppuccin
+
+# -*- conf -*-
+# Catppuccin
+
 # dim0=<not set>
 # ...
 # dim7=<not-set>
