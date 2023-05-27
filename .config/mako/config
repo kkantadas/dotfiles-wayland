@@ -7,13 +7,13 @@ on-button-left=dismiss
 on-button-middle=none
 on-button-right=dismiss-all
 on-touch=dismiss
-on-notify=exec mpv /usr/share/sounds/freedesktop/stereo/message.oga
+#on-notify=exec mpv /usr/share/sounds/freedesktop/stereo/message.oga
 
 # STYLE OPTIONS
 font=Fantasque Sans Mono 14
 width=300
 height=100
-margin=10
+margin=15
 padding=15
 border-size=1
 border-radius=12
@@ -28,7 +28,8 @@ default-timeout=5000
 ignore-timeout=0
 max-visible=5
 layer=overlay
-anchor=top-center
+anchor=top-right
+#anchor=top-center
 
 background-color=#002b36AA
 text-color=#cdd6f4
