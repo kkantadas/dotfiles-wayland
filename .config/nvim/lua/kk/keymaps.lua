@@ -77,7 +77,8 @@ keymap("n", "<leader>s" , ":ZenMode<cr>", opts)
 --Source init.lua without exiting neovimo
 --vnnoremap <leader>sv :source $MYVIMRC<CR>
 keymap("n", "<leader>r" , ":source %<cr>", opts)
-keymap("n", "<leader>c" , ":colorscheme tokyonight<cr>", opts)
+keymap("n", "<leader>c" , ":colorscheme tokyonight | :set background=dark <cr>", opts)
+keymap("n", "<leader>v" , ":colorscheme gruvbox | :set background=light <cr>", opts)
 keymap("n", "<leader>t" , ":TransparentToggle<cr>", opts)
 
 
@@ -89,4 +90,4 @@ keymap("n", "<leader>g" , ":Telescope live_grep<cr>", opts)
 keymap("n", "<C-f>" , ":FZF<cr>", opts)
 
 -- change background color for text files
-keymap("n", "<leader>p" , ":highlight Normal guibg=#F8C888 guifg=#392613<cr>", opts)
+keymap("n", "<leader>p" , ":highlight Normal guibg=-#F8C888 guifg=#392613<cr>", opts)

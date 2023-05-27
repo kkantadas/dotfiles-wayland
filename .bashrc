@@ -100,8 +100,8 @@ fi
 
     #https://github.com/garabik/grc
     #Color in the terminal -- cp -r  /etc/profile.d/grc.sh /etc/ 
-#    GRC_ALIASES=true
-#    [[ -s "/etc/profile.d/grc.sh" ]] && source /etc/grc.sh
+    GRC_ALIASES=true
+    [[ -s "/etc/profile.d/grc.sh" ]] && source /etc/grc.sh
     alias dir='dir --color=auto'
     alias feh='feh --image-bg black --scale-down'
     alias urxvt2='urxvt & sleep .3s && transset-df -a 0.93'
@@ -281,6 +281,20 @@ supertouch() {
         touch -- "$f"
     done
 }
+
+Find() { /usr/bin/find / -name "*$1*" 2>/dev/null; }
+
+#https://linuxopsys.com/topics/colors-for-ls-mean-change-colors-for-ls-in-bash
+LS_COLORS=$LS_COLORS:"*.pdf=0;33":"*.txt=01;37":"*.mobi=0;35"
+# 30	Black   || 00	Default color
+# 31	Red     || 01	Bold font
+# 32	Green   || 04	Underlined
+# 33	Orange  || 05	Flashing text
+# 34	Blue    || 07	Reversev
+# 35	Purple  || 08	Concealed
+# 36	Cyan    || 
+# 37	Grey    || 
+
 
 
 
