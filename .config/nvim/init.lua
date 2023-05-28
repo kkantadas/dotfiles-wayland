@@ -35,6 +35,6 @@ vim.cmd("nmap <silent> <Down> gj")
 vim.cmd("nmap <silent> <Up> gk")
 
 -- side border
-vim.cmd("set foldcolumn=1")
-vim.cmd(" hi FoldColumn ctermbg=none guibg=none ")
-vim.cmd(" hi Folded ctermbg=none guibg=none ")
+ vim.cmd("set foldcolumn=1")
+ vim.cmd("hi FoldColumn ctermbg=none guibg=none")
+ vim.cmd("hi Folded ctermbg=none guibg=none")

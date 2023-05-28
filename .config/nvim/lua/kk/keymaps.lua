@@ -80,7 +80,8 @@ keymap("n", "<leader>r" , ":source %<cr>", opts)
 keymap("n", "<leader>c" , ":colorscheme tokyonight | :set background=dark <cr>", opts)
 keymap("n", "<leader>v" , ":colorscheme gruvbox | :set background=light <cr>", opts)
 keymap("n", "<leader>t" , ":TransparentToggle<cr>", opts)
-
+--insert date
+keymap("n", "<leader>d" , ":pu=strftime('%m.%d.%y')<cr>", opts) 
 
 -- teleskop
 keymap("n", "<leader>f" , ":Telescope find_files<cr>", opts)

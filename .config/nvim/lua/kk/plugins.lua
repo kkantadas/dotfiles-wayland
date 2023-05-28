@@ -47,6 +47,7 @@ use 'EdenEast/nightfox.nvim'
 use "kyazdani42/nvim-web-devicons"
 use "kyazdani42/nvim-tree.lua"
 use "folke/tokyonight.nvim"  -- colortheme
+use "ellisonleao/gruvbox.nvim"  
 use "folke/zen-mode.nvim"
 use "vimwiki/vimwiki" 
 use {
