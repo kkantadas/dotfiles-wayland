@@ -41,7 +41,6 @@ export LESSOPEN='|/usr/bin/lesspipe.sh %s'
 export LESS='-R'
 export EDITOR=nvim
 
-
 #export PAGER=/usr/bin/vimpager
 #alias less=$PAGER
 #

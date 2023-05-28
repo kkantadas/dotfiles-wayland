@@ -14,7 +14,6 @@ if [ "$(tty)" = "/dev/tty1" ] ; then
     exec Hyprland
     #exec dbus-run-session sway
 
-
 else
 
     if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty2 ]]; then
