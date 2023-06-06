@@ -18,16 +18,6 @@ from ranger.api.commands import Command
 
 # Any class that is a subclass of "Command" will be integrated into ranger as a
 # command.  Try typing ":my_edit<ENTER>" in ranger!
-
-class empty(Command):
-     """:empty
- 
-     Empties the trash directory ~/.Trash
-     """
- 
-     def execute(self):
-         self.fm.run("rm -rf /home/kanta/.Trash/{*,.[^.]*}")
-
 class my_edit(Command):
     # The so-called doc-string of the class will be visible in the built-in
     # help that is accessible by typing "?c" inside ranger.
@@ -70,12 +60,3 @@ class my_edit(Command):
         # This is a generic tab-completion function that iterates through the
         # content of the current directory.
         return self._tab_directory_content()
-
- #   class empty(Command):
- #   """:empty
-
- #   Empties the trash directory ~/.Trash
- #   """
-
- #   def execute(self):
- #       self.fm.run("rm -rf /home/kanta/.Trash/")
