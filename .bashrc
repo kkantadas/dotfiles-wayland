@@ -41,6 +41,7 @@ export LESSOPEN='|/usr/bin/lesspipe.sh %s'
 export LESS='-R'
 export EDITOR=nvim
 
+
 #export PAGER=/usr/bin/vimpager
 #alias less=$PAGER
 #
@@ -137,6 +138,8 @@ fi
     alias Snap-list="snapper -c root list"
     alias Snap-remove="snapper remove"
     alias cp="cp -r"
+    alias dmenu="dmenu-wl"
+    alias dmenu_run="dmenu-wl_run"
     #remove all other packages from cache
 
 # some more ls aliases
@@ -257,6 +260,7 @@ backupthis() {
 }
 
 
+
 man() {
     env LESS_TERMCAP_mb=$'\E[01;31m' \
     LESS_TERMCAP_md=$'\E[01;38;5;74m' \
@@ -294,6 +298,13 @@ LS_COLORS=$LS_COLORS:"*.pdf=0;33":"*.txt=01;37":"*.mobi=0;35"
 # 37	Grey    || 
 
 
-
-
-
+export BEMENU_OPTS="-l 10\
+  --fn 15\
+  -i\
+  -B 1\
+  -R 8\
+  -c\
+  --bdr '#BBCCDD'\
+  -W .3\
+  --counter always\
+  --fixed-height" 
