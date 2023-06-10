@@ -297,14 +297,25 @@ LS_COLORS=$LS_COLORS:"*.pdf=0;33":"*.txt=01;37":"*.mobi=0;35"
 # 36	Cyan    || 
 # 37	Grey    || 
 
-
+# for passmenu edit /usr/share/passmenu from dmenu to bemenu !!!
 export BEMENU_OPTS="-l 10\
   --fn 15\
   -i\
   -B 1\
   -R 8\
   -c\
-  --bdr '#BBCCDD'\
+  -p '>>'\
   -W .3\
   --counter always\
-  --fixed-height" 
+  --fixed-height 
+ --nb  #313436 \
+ --bdr #ffffff \
+ --fb  #313436 \
+ --tf  #ffffff \
+ --tb  #313436 \
+ --hb  #313436 \
+ --hf  #ffffff \
+ --fbf #313436 \
+ --ab  #313436 "
+
+
