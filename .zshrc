@@ -47,7 +47,7 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-
+[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 #Plugins
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh

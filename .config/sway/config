@@ -1,4 +1,5 @@
 # Logo key. 
+# output Virtual-1 pos 0 0 res 2048x1152@60Hz
 # output HDMI1 pos 0 0 res 1280x1024
 set $mod Mod4
 # Home row direction keys, like vim

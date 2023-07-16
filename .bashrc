@@ -6,6 +6,8 @@ alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
 export XDG_RUNTIME_DIR=/run/user/$UID
+eval "$(starship init bash)"
+[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
 case $- in
     *i*) ;;
@@ -17,7 +19,14 @@ esac
 if [ -n "$SSH_CONNECTION" ]; then
     export PS1="\u@\h: \w \$ "
 else
-    export PS1="\w \$ "
+  export PS1="\w $ "
+   #export PROMPT_COMMAND="echo;$PROMPT_COMMAND"
+   #export PS1="[\e[1;34m\]\w\[\e[0m\]] "
+   #export PS1="┌─[\e[1;34m\]\w\[\e[0m\]]\n└─╼ "
+   #export PS1="┌─[\[\e[01;32m\]\u\[\e[00m\]@\[\e[01;32m\]\h\[\e[00m\]:\[\e[1;34m\]\w\[\e[0m\]]\n└─╼ "
+   #export PS1="\e[01;32m\]┌─[\[\e[01;32m\]\u\[\e[00m\]@\[\e[01;32m\]\h\[\e[00m\]:\[\e[1;34m\]\w\[\e[0m\]\e[01;
+   #32m\]]\n\e[01;32m\]└─╼\e[00m\] "
+   #export PS1="\w \$ "
 fi
 
 source /usr/share/fzf/completion.bash && source /usr/share/fzf/key-bindings.bash
@@ -26,6 +35,7 @@ source /usr/share/fzf/completion.bash && source /usr/share/fzf/key-bindings.bash
 #PS1='(\W)\$ '
 
 #for (( i=1; i<=$LINES; i++ )); do echo; done; clear;
+
 
 # Simple prompt
 #if [ -n "$SSH_CONNECTION" ]; then
@@ -40,7 +50,6 @@ export TERM=xterm-256color
 export LESSOPEN='|/usr/bin/lesspipe.sh %s'
 export LESS='-R'
 export EDITOR=nvim
-
 
 #export PAGER=/usr/bin/vimpager
 #alias less=$PAGER
@@ -140,21 +149,27 @@ fi
     alias cp="cp -r"
     alias dmenu="dmenu-wl"
     alias dmenu_run="dmenu-wl_run"
+
+    alias Tree="tree -L 1"
+    alias Fzf="fzf --preview 'bat --style changes --color=always {}'"
+    alias sxiv="sxiv.sh"
+    alias open="xdg-open"
+
     #remove all other packages from cache
 
 # some more ls aliases
-    alias ll='ls -lh'
-    alias lla='ls -lah'
-    alias la='ls -A'
-    alias l='ls -CF'
+    #alias ll='ls -lh'
+    #alias lla='ls -lah'
+    #alias la='ls -A'
+    #alias l='ls -CF'
 # some more ls aliases
-    #alias l='exa -G --no-icons  --group-directories-first'
-    #alias la='exa -G -a --icons --group-directories-first'
-    #alias ls='exa --icons --group-directories-first'
-    #alias ll='exa -l -g --icons --group-directories-first'
-    #alias lla='exa -l -a -g --icons --group-directories-first'
-    #alias tree='exa --tree --icons'  
-    #alias snapgui='snapper-gui'
+    alias l='exa -g --icons --group-directories-first'
+    alias la='exa -G -a --icons --group-directories-first'
+    alias ls='exa -g --group-directories-first'
+    alias ll='exa -l -g --icons --group-directories-first'
+    alias lla='exa -l -a -g --icons --group-directories-first'
+    alias tree='exa --tree --icons'  
+    alias snapgui='snapper-gui'
 
 # Alias definitions.
 
@@ -180,6 +195,19 @@ if ! shopt -oq posix; then
 fi
 
 
+
+# fzf
+export FZF_DEFAULT_COMMAND='fd --type f --color=never --hidden'
+export FZF_DEFAULT_OPTS='--no-height --color=bg+:#343d46,gutter:-1,pointer:#ff3c3c,info:#0dbc79,hl:#0dbc79,hl+:#23d18b'
+
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_OPTS="--preview 'bat --color=always --line-range :50 {}'"
+
+export FZF_ALT_C_COMMAND='fd --type d . --color=never --hidden'
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -50'"
+
+
+
 docview () {
     if [[ -f $1 ]] ; then
         case $1 in
@@ -194,6 +222,13 @@ docview () {
         printf "'%s' is not a valid file!\n" "$1" >&2
         return 1;
     fi
+}
+
+fcd () {
+  cd "$(find -type d | fzf)"
+}
+open () {
+  xdg-open "$(find -type f |fzf)"
 }
 
 note () {
@@ -302,20 +337,23 @@ export BEMENU_OPTS="-l 10\
   --fn 15\
   -i\
   -B 1\
-  -R 8\
+  -R 2\
   -c\
-  -p '>>'\
+  -p ''\
   -W .3\
+  -H 30 \
   --counter always\
   --fixed-height 
  --nb  #313436 \
- --bdr #ffffff \
+ --bdr #44475a \
  --fb  #313436 \
  --tf  #ffffff \
  --tb  #313436 \
- --hb  #313436 \
+ --hb  #44475a \
  --hf  #ffffff \
  --fbf #313436 \
  --ab  #313436 "
 
+
+source /home/kk/.config/broot/launcher/bash/br
 

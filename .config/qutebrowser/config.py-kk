@@ -33,9 +33,13 @@ c.content.blocking.adblock.lists = [
         "https://github.com/uBlockOrigin/uAssets/raw/master/filters/resource-abuse.txt",
         "https://www.i-dont-care-about-cookies.eu/abp/",
         "https://secure.fanboy.co.nz/fanboy-cookiemonster.txt",
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/unbreak.txt"]
-##c.auto_save.session = -'true'
+        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/unbreak.txt"
+    ]
+
 #--My Config--
+c.auto_save.session = True
+
+c.content.autoplay = False
 
 c.content.pdfjs = True
 c.fonts.default_size = "11pt"
@@ -52,6 +56,7 @@ config.bind('<Ctrl+Right>', 'forward')
 config.bind('<Shift+Left>', 'tab-prev')
 config.bind('<Shift+Right>', 'tab-next')
 config.bind('<Ctrl+r>', 'reload')
+config.bind('<Ctrl+Shift+r>', 'reload -f')
 config.bind('<Ctrl+Shift+o>', 'adblock-update')
 config.bind('<Ctrl+a>', 'hint links spawn mpv /dev/null {hint-url}')
 
@@ -82,3 +87,6 @@ c.editor.command = ['foot', '-e', 'nvim', '{file}', '-c', 'normal {line}G{column
 config.source('/home/kk/.config/qutebrowser/themes/nitdark.py') 
 
 config.bind ('ee', 'spawn --userscript qute-pass')
+config.bind ('eu', 'spawn --userscript qute-pass --username-only')
+config.bind ('ep', 'spawn --userscript qute-pass --password-only')
+
