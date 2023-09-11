@@ -31,7 +31,8 @@ stashed = "≡"
 format = '\([$state( $progress_current/$progress_total)]($style)\) '
 style = "008"
 
-
+[python]
+disabled = true
 
 #[time]
 #disabled = false

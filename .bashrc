@@ -154,6 +154,13 @@ fi
     alias Fzf="fzf --preview 'bat --style changes --color=always {}'"
     alias sxiv="sxiv.sh"
     alias open="xdg-open"
+    alias phone="simple-mtpfs --help"
+    alias phone-list="simple-mtpfs -l"
+    alias phone-mount="mkdir phone/ & simple-mtpfs --device 1 phone/"
+    alias phone-umount="fusermount -u phone && rmdir phone"
+    alias image="sxiv"
+
+
 
     #remove all other packages from cache
 
@@ -163,12 +170,12 @@ fi
     #alias la='ls -A'
     #alias l='ls -CF'
 # some more ls aliases
-    alias l='exa -g --icons --group-directories-first'
-    alias la='exa -G -a --icons --group-directories-first'
-    alias ls='exa -g --group-directories-first'
-    alias ll='exa -l -g --icons --group-directories-first'
-    alias lla='exa -l -a -g --icons --group-directories-first'
-    alias tree='exa --tree --icons'  
+    alias l='eza -g --group-directories-first'
+    alias la='eza -G -a --icons --group-directories-first'
+    alias ls='eza -g --icons --group-directories-first'
+    alias ll='eza -l -g --icons --group-directories-first'
+    alias lla='eza -l -a -g --icons --group-directories-first'
+    alias tree='eza --tree --icons'  
     alias snapgui='snapper-gui'
 
 # Alias definitions.
@@ -177,7 +184,7 @@ fi
 
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+# See /usr/share/doc/bash-doc/ezamples in the bash-doc package.
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
